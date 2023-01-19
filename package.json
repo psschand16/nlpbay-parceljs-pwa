@@ -1,0 +1,31 @@
+{
+  "name": "parceljs-pwa",
+  "version": "1.0.0",
+  "repository": "https://github.com/psschand16/nlpbay-parceljs-pwa.git",
+  "author": "surya",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "build": "parcel build  ./src/index.html",
+    "postbuild": "workbox generateSW",
+    "clean": "rm -rf ./dist/",
+    "copy": "cp -r ./src/ ./dist/",
+    "parcel:build:dev": "parcel build ./src/index.html",
+    "parcel:build:prod": "parcel build ./src/index.html",
+    "serve": "http-server ./dist/",
+    "serve:ssl": "./node_modules/.bin/http-server ./dist --ssl --key ./cert/server.key --cert ./cert/server.crt -a localhost -p 8080 -o"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.8.3",
+    "@parcel/transformer-webmanifest": "^2.8.3",
+    "@parcel/resolver-default": "^2.8.3",
+    "http-server": "^14.1.1",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
+    "workbox-cli": "^6.5.4"
+  }
+}
